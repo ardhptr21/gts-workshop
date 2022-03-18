@@ -49,6 +49,14 @@ nav.navbar {
   object-fit: cover;
 }
 
+.btn-dark-toggle {
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
 #auth,
 #product-details,
 #cart,
@@ -60,4 +68,41 @@ nav.navbar {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
+}
+
+/* dark mode */
+html.dark nav.navbar {
+  background: #000 !important;
+}
+
+html.dark nav.navbar .nav-link {
+  color: rgb(130, 130, 130) !important;
+}
+html.dark nav.navbar .nav-link.active {
+  color: #fff !important;
+}
+
+html.dark body {
+  background: #000 !important;
+}
+
+html.dark .card {
+  background: #000 !important;
+  color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+}
+
+html.dark .btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+html.dark .btn-dark-toggle {
+  color: #fff;
+}
+
+html.dark h1,
+h2,
+h3 {
+  color: #fff !important;
 }

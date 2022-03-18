@@ -15,4 +15,19 @@
         glare: true,
         "max-glare": 0.5
     });
+
+    const isDark = localStorage.getItem('dark')
+    const toggle = $('btn-dark-toggle');
+    if (!isDark) {
+        localStorage.setItem('dark', 'false')
+    } else if (isDark === 'true') {
+        $('html').addClass('dark')
+    }
+
+
+    $('.btn-dark-toggle').click(function() {
+        $('html').toggleClass('dark')
+
+        localStorage.setItem('dark', isDark === 'false' ? 'true' : 'false')
+    });
 </script>
