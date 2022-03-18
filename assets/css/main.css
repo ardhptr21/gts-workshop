@@ -50,11 +50,13 @@ nav.navbar {
 }
 
 .btn-dark-toggle {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   border: none;
   background-color: transparent;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 #auth,
@@ -102,6 +104,7 @@ html.dark .btn-dark-toggle {
 }
 
 html.dark h1,
+.breadcrumb a,
 h2,
 h3 {
   color: #fff !important;

@@ -69,15 +69,15 @@ $products = productsGetWithCategories($_GET['q'], $pagination, $current_page);
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item <?php echo ($current_page <= 1) ? 'disabled' : '' ?>">
-                            <a class="page-link" href="<?php echo ($current_page <= 1) ? '#' : '?c=' . $_GET['c'] . '&page=' . ($current_page - 1) ?>">Previous</a>
+                            <a class="page-link" href="<?php echo ($current_page <= 1) ? '#' : '?q=' . $_GET['q'] . '&page=' . ($current_page - 1) ?>">Previous</a>
                         </li>
                         <?php for ($i = 1; $i <= $max_page; $i++) : ?>
                             <li class="page-item  <?php echo ($current_page == $i) ? 'active' : '' ?>">
-                                <a class="page-link" href="<?php echo '?c=' . $_GET['c'] . '&page=' . $i ?>"><?php echo $i ?></a>
+                                <a class="page-link" href="<?php echo '?q=' . $_GET['q'] . '&page=' . $i ?>"><?php echo $i ?></a>
                             </li>
                         <?php endfor; ?>
                         <li class="page-item <?php echo ($current_page >= $max_page) ? 'disabled' : '' ?>">
-                            <a class="page-link" href="<?php echo ($current_page >= $max_page) ? '#' : '?c=' . $_GET['c'] . '&page=' . ($current_page + 1) ?>">Next</a>
+                            <a class="page-link" href="<?php echo ($current_page >= $max_page) ? '#' : '?q=' . $_GET['q'] . '&page=' . ($current_page + 1) ?>">Next</a>
                         </li>
                     </ul>
                 </nav>
