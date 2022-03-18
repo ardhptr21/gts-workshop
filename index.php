@@ -61,7 +61,7 @@ $path = 'index';
             <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
                 <?php foreach ($products['data'] as $j => $product) : ?>
                     <div class="col-12 col-lg-4">
-                        <div class="card">
+                        <div class="card tilt-js">
                             <img src="<?php echo $product['image'] ?>" class="card-img-top img-100">
                             <div class="card-body">
                                 <h5 class="card-title text-center"><?php echo $product['name'] ?></h5>

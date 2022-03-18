@@ -21,8 +21,11 @@ if ($product['data'] === null) {
 
 $categories = categoriesFindById($product['data']['categories_id']);
 $path = 'products-' . $categories['data']['id'];
-$cart = cartFindByUserAndProducts($_SESSION['id'], $product['data']['id']);
-$existing_qty = ($cart['data'] == null ? 1 : $cart['data']['qty']);
+
+if (isset($_SESSION['id'])) {
+    $cart = cartFindByUserAndProducts($_SESSION['id'], $product['data']['id']);
+    $existing_qty = ($cart['data'] == null ? 1 : $cart['data']['qty']);
+}
 
 if (isset($_POST['submit'])) {
     if (!isset($_SESSION['login']) || $_SESSION['login'] == '') {
@@ -55,7 +58,7 @@ if (isset($_POST['submit'])) {
     <?php include "template/navigation.php" ?>
 
     <section id="product-details" class="d-flex flex-column justify-content-center align-items-center pt-3 mb-3">
-        <form class="container" method="POST">
+        <form method="POST" class="container mt-5">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -66,7 +69,7 @@ if (isset($_POST['submit'])) {
                 </ol>
             </nav>
 
-            <div class="card mb-3">
+            <div class=" mb-3">
                 <div class="row g-0">
                     <div class="col-lg-6">
                         <img src="<?php echo $product['data']['image'] ?>" class="img-fluid w-100 mb-3">
@@ -83,7 +86,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                             </div>
                             <div class="d-flex flex-row justify-content-between">
-                                <div class="d-flex flex-row justify-content-between align-content-center">
+                                <div class="d-flex flex justify-content-center align-content-center">
                                     <label for="qty">Qty</label>
                                     <input id="qty" name="qty" type="number" class="form-control ms-3" placeholder="QTY" value="<?php echo $existing_qty ?>" min="1" required>
                                 </div>

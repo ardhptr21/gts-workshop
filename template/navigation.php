@@ -4,10 +4,10 @@ $nav_cart = (isset($_SESSION['cart'])) ? ($_SESSION['cart'] > 0 ? $_SESSION['car
 $nav_search = (isset($_GET['q'])) ? $_GET['q'] : "";
 ?>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.png" alt="Logo" height="45">
+        <a class="navbar-brand" href="/">
+            <img src="assets/img/logo2.png" alt="Logo" height="45">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">

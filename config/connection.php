@@ -4,7 +4,7 @@ function connection()
 {
     $host = "localhost";
     $user = "root";
-    $pass = "";
+    $pass = "root";
     $db = "online_shop";
 
     // Create connection
